@@ -15,7 +15,7 @@ physical files change as one guarded use case.
 
 The application ships its default settings and UI assets below
 `lanista/resources/defaults/`. Set an absolute `LANISTAI_DATA_HOME` and copy
-Susan into it using the [installation runbook](../runbooks/installation.md).
+the model into it using the [installation runbook](../runbooks/installation.md).
 The workspace contains runtime state, logs, the model copy and experiment
 output.
 

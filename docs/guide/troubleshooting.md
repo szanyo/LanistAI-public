@@ -22,7 +22,7 @@ Use the operation or run ID to correlate related messages.
 | Symptom | Check first |
 |---|---|
 | Application does not reach Home | Use the pinned Python packages and confirm the [installation](../runbooks/installation.md). |
-| Susan does not appear in the picker | Confirm `LANISTAI_DATA_HOME` is absolute and contains the copied model and its manifest. |
+| The model does not appear in the picker | Confirm `LANISTAI_DATA_HOME` is absolute and contains the copied model and its manifest. |
 | A checkpoint cannot be restored | Check the selected framework and the [checkpoint metadata](../reference/configuration-and-manifests.md#checkpoint-restore-contract). |
 | Stop stays in progress | Check the current worker and cleanup messages before moving or editing the workspace. |
 | A simulation operation fails | Keep the scenario ID and the first native cause. Check SUMO, the network and the route inputs. |

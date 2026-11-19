@@ -1,15 +1,16 @@
 # LanistAI
 
-This repository contains a reinforcement learning workbench and the Susan
-autonomous driving experiment. Susan uses SUMO, PPO, generated training scenarios, and a fixed held-out
-scenario library. The application includes Stable-Baselines3 and Ray RLlib
-integrations.
+This repository contains the LanistAI reinforcement learning workbench and
+the autonomous driving experiment described in the accompanying paper. The
+experiment uses SUMO, PPO, generated training scenarios and a fixed held-out
+scenario library. The application supports Stable-Baselines3 and Ray RLlib.
 
 ## Contents
 
 - `lanista/` contains the application and its resources
-- `lanista/rl_model_storage/models/susan_project/` contains the Susan model,
-  training configuration and the paper's 100-scenario evaluation library
+- `lanista/rl_model_storage/models/susan_project/` contains the experiment's model,
+  training configuration and 100-scenario evaluation library
+- [Paper results and data](docs/results.md) maps figures and tables to their source files
 - `requirements.txt` pins the Python environment used on Linux x86-64
 - `PUBLICATION-SOURCE.json` records the historical Git references
 - `SNAPSHOT-SHA256.json` records the copied files and their SHA-256 digests
@@ -17,7 +18,7 @@ integrations.
 ## Installation and documentation
 
 Follow the [installation runbook](docs/runbooks/installation.md) to set up
-Python and SUMO online or offline and prepare the writable Susan workspace.
+Python and SUMO online or offline and prepare the writable model workspace.
 Then open the [project documentation](docs/README.md) for the application
 workflow, architecture, configuration and evaluation. The
 [reproduction guide](docs/reproduction.md) records the paper inputs and the

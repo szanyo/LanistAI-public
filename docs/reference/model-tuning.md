@@ -6,14 +6,14 @@ All rights reserved.
 
 # Model tuning and framework configuration
 
-Susan's common PPO values are imported by both model-local backend builders.
+Both backend builders import the same common PPO settings.
 The framework manifests supply curriculum, checkpoint and evaluation settings.
 
 ## Choose the correct configuration surface
 
 | What changes | Current owner | Use it for |
 |---|---|---|
-| Shared PPO intent | Susan's [`ppo_config.py`](../../lanista/rl_model_storage/models/susan_project/resources/utils/training/ppo_config.py) | Values deliberately aligned across RLlib and SB3, such as learning rate, discounting, PPO clipping, update epochs, and network layout |
+| Shared PPO intent | [`ppo_config.py`](../../lanista/rl_model_storage/models/susan_project/resources/utils/training/ppo_config.py) | Values deliberately aligned across RLlib and SB3, such as learning rate, discounting, PPO clipping, update epochs, and network layout |
 | RLlib algorithm and sampling | The model-local [Ray configurator](../../lanista/rl_model_storage/models/susan_project/resources/ray/algorithm_configurator.py) and [builder](../../lanista/rl_model_storage/models/susan_project/resources/utils/training/runtime_config.py) | `PPOConfig`, EnvRunner topology, learner resources, multi-agent policy mapping, RLlib model options, and Ray logging |
 | SB3 algorithm and policy | The model-local [SB3 configurator](../../lanista/rl_model_storage/models/susan_project/resources/sb3/algorithm_configurator.py), its builder, and the [core adapter allowlist](../../lanista/reinforcengine/rl_technologies/sb3/algorithm_config.py) | Keyword arguments accepted by the SB3 `PPO` constructor and its `policy_kwargs` |
 | Run and evaluation policy | The model-local Ray or SB3 `model_manifest_configuration.yaml` | Checkpoint/evaluation cadence, evaluation behavior, scenario selection, curriculum gates, and plugin identity |
@@ -47,7 +47,7 @@ each backend.
 Sampling topology, loss reduction, advantage handling and framework defaults
 affect the update in each backend.
 
-## Susan PPO baseline
+## PPO baseline
 
 | Configuration group | Parameter | Current shared value | Source symbol |
 |---|---|---|---|
@@ -65,7 +65,7 @@ affect the update in each backend.
 | Network | Separate policy/value hidden layers | `[64, 64]` | `PPO_POLICY_NET_ARCH` |
 | Network | Hidden activation | `tanh` | `PPO_POLICY_ACTIVATION` |
 
-For the bundled Susan task, model-specific configuration also controls a
+The model-specific configuration also controls a
 30-sample history, observation/reward constants, acceleration bounds of
 `[-4, 3]`, a `0.05 s` simulation step, a 5000–7000 step curriculum budget, and scenario
 difficulty. These values live in the observation, training, and scenario

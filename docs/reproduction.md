@@ -1,4 +1,4 @@
-# Reproducing the Susan experiment
+# Reproducing the experiment
 
 ## Source and inputs
 
@@ -20,13 +20,13 @@ The paper records the checkpoint digests below.
 - SB3 `a311d08cd84bdd92d58933ee85d24eb6fc291240c2f643dedd1c59cfa480b00e`
 - Ray RLlib `b54b0f275288f9ef9847aa55cb1587b78308a9ba5cf7ca570dd781997c23fd8b`
 
-These sessions predate the selected source snapshot, which identifies itself as
-Susan `v1.3.232`. The paper provenance does not identify the exact source
+These sessions predate the selected source snapshot, whose
+model manifest declares version `v1.3.232`. The paper provenance does not identify the exact source
 checkout. This repository contains source and scenario inputs. The original
 trained weights and original generated training routes are separate artifacts.
 A fresh run uses newly generated traffic and learns a new policy.
 
-## Train Susan
+## Train the model
 
 Complete the [installation](runbooks/installation.md), then follow the
 [training steps](guide/using-the-application.md#start-a-training-session).
@@ -50,14 +50,14 @@ both strictly positive and strictly negative applied acceleration commands.
 The resulting maximum is divided by 3.0 and negated. The jitter penalty uses
 discrete differences between applied commands.
 
-Sessions and checkpoints are stored under Susan in the writable data
-directory. Stop the run using the application control panel.
+Sessions and checkpoints are stored in the writable model
+workspace. Stop the run using the application control panel.
 
 ## Evaluate the held-out cases
 
 Follow the [held-out evaluation runbook](runbooks/evaluation-library.md) to
 select a compatible checkpoint, run the four groups of 25 cases and locate
-the run evidence under Susan's `tensorboard/evaluation/libraries/`.
+the run evidence under `tensorboard/evaluation/libraries/` in the model workspace.
 
 Verify the held-out scenario files before evaluating. The temporary training
 directory in this command keeps the verification independent of generated routes.
@@ -87,6 +87,9 @@ PY
 The expected counts are four groups and 100 scenarios. Compare frameworks on
 the same library and report the checkpoints, training exposures and
 contributing episode counts.
+
+See [Paper results and data](results.md) for the archived tables, figure data
+and run identities.
 
 ## Scope of the statistical reports
 

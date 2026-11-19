@@ -34,7 +34,7 @@ GUI, and it never reaches sideways into one model project's implementation.
 | `lanista/reinforcengine/rl_technologies/` | Shared Ray and SB3 runtime, training, evaluation, configuration, and checkpoint mechanics | GUI policy or a particular model's domain decisions | `runtime_contracts.py`, `ray/`, `sb3/` |
 | `lanista/reinforcengine/utils/simulation/` | Narrow simulator ports, native SUMO adapter, common episode/context utilities | Framework callbacks or model-specific reward tuning | `ports.py`, `simulation_controller.py` |
 | `lanista/reinforcengine/rl_metrics/` | Stable channel/observation names, snapshot projection, aggregation, deterministic tables, and publication policy | Training ownership or screen rendering | `channel_schema.py`, `snapshot_projection.py`, `aggregation.py`, `metric_table.py`, `tensorboard_surface.py` |
-| `lanista/rl_model_storage/models/susan_project/resources/` | Thin model plugin, policies, environment wiring, scenario-specific domain behavior | A copied Ray/SB3 lifecycle or unchecked native imports | Susan’s `ray/`, `sb3/` and `utils/` packages |
+| `lanista/rl_model_storage/models/susan_project/resources/` | Thin model plugin, policies, environment wiring, scenario-specific domain behavior | A copied Ray/SB3 lifecycle or unchecked native imports | The model’s `ray/`, `sb3/` and `utils/` packages |
 | `lanista/tests/` | Selected PPO, reward and grouped-report tests | Valuable runtime artifacts as fixtures | The domain directory matching the source responsibility |
 | `docs/` | Project guides, architecture, configuration and experiment runbooks | Copied Python signatures or generated HTML | This guide, architecture index, runbooks, extension guides |
 
@@ -45,7 +45,7 @@ environment construction, scenario/curriculum decisions, checkpoint hooks, and
 metric hooks through the typed plugin contract. It should not copy framework
 startup, cleanup, checkpoint resolution, or training-loop mechanics.
 
-For Susan, one simulation step is intentionally split into named stages:
+The simulation step proceeds through the following stages:
 
 ```text
 simulator input -> scenario context -> control -> command

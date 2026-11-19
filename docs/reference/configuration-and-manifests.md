@@ -6,7 +6,7 @@ All rights reserved.
 
 # Configuration and manifest reference
 
-This page identifies the configuration and metadata used to run Susan. The
+This page identifies the configuration and metadata used to run the experiment. The
 [model-tuning reference](model-tuning.md) lists the learning parameters shared
 by the two backends.
 

@@ -7,7 +7,7 @@ All rights reserved.
 # Held-out evaluation-library workflow
 
 This runbook evaluates one frozen Ray RLlib or Stable-Baselines3 checkpoint
-over the complete Susan library and regenerates its run-level tables. The
+over the complete held-out scenario library and regenerates its run-level tables. The
 [reproduction guide](../reproduction.md) identifies the paper inputs and
 explains which statistical calculations are available in this snapshot.
 
@@ -31,7 +31,7 @@ overlapping and symlink-aliased roots.
 
 ## Select one checkpoint and execute the complete sweep
 
-1. Load Susan and open Configure with F1.
+1. Load the experiment model and open Configure with F1.
 2. Choose Evaluation, the framework, the session and an explicit checkpoint.
 3. Select the Library evaluation profile and the paper library. Use one
    repetition per scenario for the paper protocol.
@@ -45,7 +45,7 @@ cached `PPO` and calls `predict()`. Ray restores one cached evaluation-mode
 environment and run without training.
 
 The coordinator visits each manifest entry once, in manifest order. The
-application stores the run in Susan's writable model directory.
+application stores the run in the writable model directory.
 
 ```text
 tensorboard/evaluation/libraries/<run-id>/

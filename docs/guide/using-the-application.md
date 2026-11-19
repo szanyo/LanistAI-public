@@ -28,7 +28,7 @@ to cancel or go back. The footer shows context-sensitive bindings.
 
 ## Load and configure a runtime
 
-1. Press F4 and select Susan. Confirm the selection to stage the model and
+1. Press F4 and select the experiment model (`susan_project`). Confirm the selection to stage the model and
    reopen the run configuration.
 2. Choose Training, Evaluation or Inference, then select SB3 or Ray RLlib.
 3. Select the session and checkpoint required by the mode. Confirm the

@@ -4,13 +4,13 @@ Copyright (c) 2026 HUN-REN SZTAKI.
 All rights reserved.
 -->
 
-# Susan reward calculation
+# Reward calculation
 
 The reward calculation uses four weighted components for command realisation,
 command change, speed and jitter. Separate services own simulator context,
 numerical calculations, mutable episode state and telemetry.
 
-## Susan responsibility boundaries
+## Responsibilities
 
 - `lanista/rl_model_storage/models/susan_project/resources/utils/reward/reward_service.py`
   owns the typed reward workflow, state-update order, telemetry projection, and
@@ -47,5 +47,5 @@ numerically neutral:
 - `lanista/rl_model_storage/models/susan_project/resources/sb3/sim_env.py`.
 
 
-The [reproduction guide](../reproduction.md#train-susan) explains the historical
+The [reproduction guide](../reproduction.md#train-the-model) explains the historical
 jitter weighting used in this snapshot.

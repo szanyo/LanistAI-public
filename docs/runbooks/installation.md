@@ -100,10 +100,10 @@ local change to a file in the snapshot manifest, so a later checksum check
 reports that file as modified. Preserve a verified copy when you need the
 original snapshot identity.
 
-## Prepare the Susan workspace
+## Prepare the model workspace
 
 Use an absolute directory for writable model and run data. The following
-command makes a separate copy of Susan and fails if the target already exists.
+command makes a separate copy of the experiment model and fails if the target already exists.
 
 ```bash
 export LANISTAI_DATA_HOME="$HOME/lanistai-data"

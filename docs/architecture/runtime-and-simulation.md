@@ -7,7 +7,7 @@ All rights reserved.
 # Runtime, framework, and simulation architecture
 
 This page explains how a user command becomes one managed Ray or SB3 run and
-how a model plugin connects its environment. Susan carries each environment
+how a model plugin connects its environment. The driving model carries each environment
 step through the typed SUMO boundary. Selection, execution, framework
 resources and external environment access each have one owner.
 
@@ -29,7 +29,7 @@ contracts. Automotive policy uses generic simulator ports.
 
 ## SUMO boundary
 
-The Susan environments depend on narrow lifecycle, vehicle, and
+The driving environments depend on narrow lifecycle, vehicle, and
 traffic-light ports. The shared SUMO controller owns the native session and
 translates failures at the adapter boundary.
 
@@ -45,9 +45,9 @@ application root performs the replacement. The inherited intent validates and
 restores the same model/framework/session/checkpoint/scenario selection. This
 policy applies to the SUMO GUI adapter.
 
-## Susan's ordered step pipeline
+## Simulation step pipeline
 
-Susan executes one step through named stages:
+The driving model executes one step through named stages:
 
 ```mermaid
 flowchart LR
@@ -70,6 +70,6 @@ flowchart LR
 | Telemetry | Publish stable shared metric keys and quality information |
 
 Ray and SB3 environments adapt the final container shape and use the same
-Susan pipeline. In that pipeline, the realised acceleration read at the start
+simulation pipeline. In that pipeline, the realised acceleration read at the start
 of a step belongs to the preceding controller interval. The current policy
 action and the command chosen for the next interval have separate roles.

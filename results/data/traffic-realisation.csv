@@ -1,0 +1,5 @@
+group_id,requested_vehicles,requested_pedestrians,scenario_count,realised_vehicles_mean,realised_vehicles_sample_sd,realised_pedestrians_mean,realised_pedestrians_sample_sd
+group-001,114,14,25,105.32,2.8682166352398606,14.0,0.0
+group-002,143,17,25,131.32,3.236767935250636,17.0,0.0
+group-003,171,21,25,155.72,2.6223399220289245,21.0,0.0
+group-004,200,25,25,182.64,4.2805762851902704,25.0,0.0

@@ -4,7 +4,7 @@ Copyright (c) 2026 HUN-REN SZTAKI.
 All rights reserved.
 -->
 
-# Susan policy observations
+# Policy observations
 
 The observation contract specifies field names, order, shape, units, bounds,
 normalization and missing values. Changing a
@@ -17,7 +17,7 @@ history/scalar order, telemetry-only keys, lengths, and bounds without importing
 a model plugin. Ray and SB3 may adapt the container shape, but they must not
 change field meaning, normalization, or order.
 
-## Susan responsibility boundaries
+## Responsibilities
 
 - `lanista/rl_model_storage/models/susan_project/resources/utils/observation/observation_feature_service.py`
   is the stateless numerical boundary for object slots, red-light features, and
@@ -29,7 +29,7 @@ change field meaning, normalization, or order.
   `ObservationFormattingRequest -> FormattedObservation`. Request fields use
   unit-bearing names, and `FormattedObservation.values` is read-only.
 - `lanista/rl_model_storage/models/susan_project/resources/utils/observation/observation_config.py`
-  binds the neutral key contract to Susan history/scalar channels and documents
+  binds the neutral key contract to the model's history and scalar channels and documents
   producer normalization and Gym guardrails.
 - `lanista/rl_model_storage/models/susan_project/resources/utils/observation/vehicle_telemetry.py`
   and

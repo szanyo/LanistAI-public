@@ -1,0 +1,66 @@
+{
+  "bootstrap": {
+    "confidence_level": 0.95,
+    "draws": 10000,
+    "method": "paired, group-stratified percentile",
+    "seed": 20261001
+  },
+  "group_sizes": {
+    "group-001": 25,
+    "group-002": 25,
+    "group-003": 25,
+    "group-004": 25
+  },
+  "groups": [
+    {
+      "group_id": "group-001",
+      "name": "upper-training-11",
+      "pedestrian_count": 14,
+      "scenario_count": 25,
+      "vehicle_count": 114
+    },
+    {
+      "group_id": "group-002",
+      "name": "upper-training-14",
+      "pedestrian_count": 17,
+      "scenario_count": 25,
+      "vehicle_count": 143
+    },
+    {
+      "group_id": "group-003",
+      "name": "upper-training-17",
+      "pedestrian_count": 21,
+      "scenario_count": 25,
+      "vehicle_count": 171
+    },
+    {
+      "group_id": "group-004",
+      "name": "upper-training-20",
+      "pedestrian_count": 25,
+      "scenario_count": 25,
+      "vehicle_count": 200
+    }
+  ],
+  "inference_scope": "fixed checkpoints; scenario-sampling uncertainty only",
+  "iqm": "25%-trimmed mean; continuous metrics only",
+  "library_id": "publication-upperhalf-4x25-20260930",
+  "library_manifest_sha256": "16a2cd1f2ac7c3677a8eff37b248a64af4dfe57fa82a0c0c743b1f9df44533e1",
+  "missingness": "no imputation; per-metric n and n_paired record available observations",
+  "runs": {
+    "ray": {
+      "checkpoint_id": "scenario_20_checkpoint_18593792_steps",
+      "checkpoint_sha256": "b54b0f275288f9ef9847aa55cb1587b78308a9ba5cf7ca570dd781997c23fd8b",
+      "path": "lanista/rl_model_storage/models/susan_project/tensorboard/evaluation/libraries/library-20260930-195816-fee4623a"
+    },
+    "sb3": {
+      "checkpoint_id": "scenario_20_checkpoint_2936010_steps",
+      "checkpoint_sha256": "a311d08cd84bdd92d58933ee85d24eb6fc291240c2f643dedd1c59cfa480b00e",
+      "path": "lanista/rl_model_storage/models/susan_project/tensorboard/evaluation/libraries/library-20260930-185502-430e64f7"
+    }
+  },
+  "scenario_count": 100,
+  "schema_version": 1,
+  "signed_rates": "ray_higher/tie/ray_lower are numeric comparisons, not value judgments",
+  "statistical_unit": "one paired scenario; all library scenarios have equal weight",
+  "stop_count": "STOP_BEGIN after first recorded |speed| >= 0.20 m/s; initial stationary state excluded"
+}

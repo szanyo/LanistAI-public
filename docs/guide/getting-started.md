@@ -7,7 +7,7 @@ All rights reserved.
 # First run
 
 Complete the [installation runbook](../runbooks/installation.md) first. Use a
-separate Susan data directory so the run can write its own sessions and
+separate data directory so the run can write its own sessions and
 checkpoints.
 
 ## Launch the application
@@ -24,7 +24,7 @@ terminal large enough to show the Home screen, Control Panel, and footer.
 ## Confirm the workspace
 
 1. If the run configuration opens at launch, press Esc to return to Home.
-2. Press F4 and confirm Susan as the active project. Confirming a candidate
+2. Press F4 and select the experiment model (`susan_project`). Confirming a candidate
    from the model picker opens its run configuration.
 3. Review the framework and mode in the configuration dialog. Press Esc to
    inspect without starting a new training session.

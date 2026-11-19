@@ -1,0 +1,81 @@
+{
+  "trace_scenario_id": "group-003-scenario-0001",
+  "library_id": "publication-upperhalf-4x25-20260930",
+  "library_manifest_sha256": "16a2cd1f2ac7c3677a8eff37b248a64af4dfe57fa82a0c0c743b1f9df44533e1",
+  "master_seed": 20260930,
+  "groups": [
+    {
+      "group_id": "group-001",
+      "name": "upper-training-11",
+      "pedestrian_count": 14,
+      "scenario_count": 25,
+      "vehicle_count": 114
+    },
+    {
+      "group_id": "group-002",
+      "name": "upper-training-14",
+      "pedestrian_count": 17,
+      "scenario_count": 25,
+      "vehicle_count": 143
+    },
+    {
+      "group_id": "group-003",
+      "name": "upper-training-17",
+      "pedestrian_count": 21,
+      "scenario_count": 25,
+      "vehicle_count": 171
+    },
+    {
+      "group_id": "group-004",
+      "name": "upper-training-20",
+      "pedestrian_count": 25,
+      "scenario_count": 25,
+      "vehicle_count": 200
+    }
+  ],
+  "runs": {
+    "ray": {
+      "path": "lanista/rl_model_storage/models/susan_project/tensorboard/evaluation/libraries/library-20260930-195816-fee4623a",
+      "checkpoint_id": "scenario_20_checkpoint_18593792_steps",
+      "checkpoint_sha256": "b54b0f275288f9ef9847aa55cb1587b78308a9ba5cf7ca570dd781997c23fd8b",
+      "completed": 100,
+      "completed_trip": 100
+    },
+    "sb3": {
+      "path": "lanista/rl_model_storage/models/susan_project/tensorboard/evaluation/libraries/library-20260930-185502-430e64f7",
+      "checkpoint_id": "scenario_20_checkpoint_2936010_steps",
+      "checkpoint_sha256": "a311d08cd84bdd92d58933ee85d24eb6fc291240c2f643dedd1c59cfa480b00e",
+      "completed": 100,
+      "completed_trip": 100
+    }
+  },
+  "native_execution_rates": [
+    {
+      "backend": "ray",
+      "tag": "ray_sampling/sampling_throughput",
+      "n": 9079,
+      "last": 195.20809936523438,
+      "median": 202.77801513671875,
+      "unit": "framework-native steps/s",
+      "topology": "8 environment runners; 1 environment per runner; fragment auto; batch mode truncate_episodes",
+      "display_topology": "8 runners, 1 environment per runner"
+    },
+    {
+      "backend": "sb3",
+      "tag": "time/fps",
+      "n": 1433,
+      "last": 130.0,
+      "median": 133.0,
+      "unit": "framework-native steps/s",
+      "topology": "one SB3 environment; time/fps is its native processed-frame rate",
+      "display_topology": "1 local environment"
+    }
+  ],
+  "statistical_unit": "one scenario; paired by scenario ID and seed",
+  "limitations": [
+    "Requested vehicle counts may differ from random-trip realisations.",
+    "The two checkpoints have unequal training exposures.",
+    "Vehicle and pedestrian demand vary together; separate factor effects are not identifiable.",
+    "Native training throughput tags have different framework scopes."
+  ]
+}
