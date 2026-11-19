@@ -1,0 +1,133 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Prevents the Model Detail content wrapper from overflowing its modal body. */
+#model_detail_edit_dialog {
+    overflow: hidden;
+}
+
+/* Styles the model name input field. */
+#model_detail_name_input {
+    height: 3;
+    margin: 0;
+    margin-top: 1;
+    border-title-align: left;
+    border-title-color: $text-muted;
+    border-title-background: $surface;
+    background: $surface;
+}
+
+/* Styles the model version input field. */
+#model_detail_version_input {
+    height: 3;
+    margin: 0;
+    margin-top: 1;
+    border-title-align: left;
+    border-title-color: $text-muted;
+    border-title-background: $surface;
+    background: $surface;
+}
+
+/* Styles the model description editor. */
+#model_detail_description_input {
+    height: 8;
+    margin: 0;
+    margin-top: 1;
+    border-title-align: left;
+    border-title-color: $text-muted;
+    border-title-background: $surface;
+    background: $surface;
+}
+
+#model_detail_session_name_input {
+    height: 3;
+    margin: 0;
+    margin-top: 1;
+    border-title-align: left;
+    border-title-color: $text-muted;
+    border-title-background: $surface;
+    background: $surface;
+}
+
+#model_detail_session_description_input,
+#model_detail_checkpoint_annotation_input {
+    height: 6;
+    margin: 0;
+    margin-top: 1;
+    border-title-align: left;
+    border-title-color: $text-muted;
+    border-title-background: $surface;
+    background: $surface;
+}
+
+/* Styles the read-only model metadata panel. */
+#model_detail_meta_panel {
+    height: auto;
+    margin-top: 1;
+    padding: 0 1;
+    border-title-align: left;
+    color: $text;
+}
+
+/* Styles the compact metadata rows in the Model Detail dialog. */
+#model_detail_uuid,
+#model_detail_framework,
+#model_detail_checkpoint {
+    height: 1;
+    color: $text;
+    margin: 0;
+}
+
+/* Lays out compact model/session lineage previews in balanced columns. */
+#model_detail_lineage_previews {
+    width: 1fr;
+    height: 10;
+    min-height: 10;
+    margin-top: 1;
+}
+
+#model_detail_model_lineage_preview,
+#model_detail_session_lineage_preview {
+    width: 1fr;
+    height: 10;
+    min-height: 10;
+    padding: 0;
+}
+
+#model_detail_model_lineage_preview {
+    margin-right: 1;
+}
+
+/* Makes Model Detail navigation and action buttons fill their columns. */
+#model_detail_model_lineage,
+#model_detail_session_lineage,
+#model_detail_delete,
+#model_detail_save,
+#model_detail_cancel {
+    width: 1fr;
+}
+
+#model_detail_lineage_actions {
+    margin-top: 1;
+}
+
+#model_detail_model_lineage,
+#model_detail_session_lineage {
+    border: round $primary-lighten-1 50%;
+    background: $surface;
+}
+
+#model_detail_model_lineage:focus,
+#model_detail_session_lineage:focus {
+    border: round $accent;
+}
+
+/* Adds spacing between destructive/save actions and the final cancel button. */
+#model_detail_delete,
+#model_detail_session_lineage,
+#model_detail_save {
+    margin-right: 2;
+}

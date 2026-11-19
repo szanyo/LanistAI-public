@@ -1,0 +1,134 @@
+# Copyright (c) 2026 Benedek Szanyó.
+# Copyright (c) 2026 HUN-REN SZTAKI.
+# All rights reserved.
+
+schema_version: 1
+algorithm:
+  name: PPO
+  running_profile: single
+  training_conditions:
+    training_warmup_jitter_seconds: 30
+    curriculum_switch:
+      # Release 5000 through 7000 active steps linearly across targets and full route.
+      initial_time_limit_ratio: 0.7142857142857143
+      entropy_range:
+        lower: -0.2
+        upper: 0.2
+      # Twenty-five accepted episodes per level, accumulated as 25, 50, ... 150.
+      min_terminated_episodes: 25
+      # Recent completed episodes that may replace only a failed preferred bound.
+      preferred_override_window_size: 25
+      red_light_overdrive_rate_threshold:
+        acceptable_range:
+          upper: 0.2
+        preferred_range:
+          upper: 0.15
+      termination_ratio_threshold:
+        acceptable_range:
+          lower: 0.6
+        preferred_range:
+          lower: 0.8
+      time_limit_truncation_rate_threshold:
+        acceptable_range:
+          upper: 0.3
+        preferred_range:
+          upper: 0.25
+      states:
+      - name: intersection_3
+        target_type: intersection
+        target_value: 3
+      - name: intersection_4
+        target_type: intersection
+        target_value: 4
+      - name: intersection_5
+        target_type: intersection
+        target_value: 5
+      - name: intersection_6
+        target_type: intersection
+        target_value: 6
+      - name: intersection_7
+        target_type: intersection
+        target_value: 7
+      - name: intersection_8
+        target_type: intersection
+        target_value: 8
+    metrics:
+      approx_kl_threshold:
+        acceptable_range:
+          upper: 0.02
+        preferred_range:
+          upper: 0.01
+      clip_fraction_threshold:
+        acceptable_range:
+          upper: 0.05
+        preferred_range:
+          upper: 0.02
+      entropy_loss_threshold:
+        acceptable_range:
+          lower: -0.5
+          upper: 0.5
+        preferred_range:
+          lower: -0.2
+          upper: 0.2
+      episode_reward_stability:
+        # Scenario promotion requires a strictly positive recent reward mean.
+        target_mean_by_lookback_window: 0
+      explained_variance_threshold:
+        acceptable_range:
+          lower: 0.6
+        preferred_range:
+          lower: 0.75
+      policy_std_threshold:
+        acceptable_range:
+          lower: 0.05
+          upper: 0.3
+        preferred_range:
+          lower: 0.08
+          upper: 0.25
+    scenario_switch:
+      lookback_window_size: 5
+      # Hard evidence floor for every generated traffic scenario.
+      min_terminated_episodes_for_switch_per_scenario: 25
+      # Keep the override evidence on the same scale as the scenario quota.
+      preferred_override_window_size: 25
+      min_full_curriculum_episodes: 5
+      red_light_overdrive_rate_threshold:
+        acceptable_range:
+          upper: 0.2
+        preferred_range:
+          upper: 0.15
+      termination_ratio_threshold:
+        acceptable_range:
+          lower: 0.6
+        preferred_range:
+          lower: 0.8
+      time_limit_truncation_rate_threshold:
+        acceptable_range:
+          upper: 0.3
+        preferred_range:
+          upper: 0.25
+    training_verbosity: 0
+checkpoint_saving_frequency: 50000
+evaluation_deterministic: true
+evaluation_frequency: 100000
+model_implementation:
+  module: lanista.rl_model_storage.models.susan_project.resources.sb3.rl_model
+  object: SusanSB3ModelPlugin
+number_of_scenarios: 10
+rl_engine_framework:
+  uuid: sb3
+  version: 2.6.0
+runtime:
+  evaluation:
+    constant_speed_diagnostic_max_steps: 6000 # Diagnostic rollout cap in RL simulation steps, not SUMO seconds
+    constant_speed_diagnostic_speed_mps: 4.2
+    n_eval_episodes: 1
+    training_eval_callback_enabled: false
+    visualization: gui
+    pacing: maximum-throughput
+  scenario_selection:
+    deployment_index: 20
+    evaluation_index: 0
+    training_start_index: 0
+scenario_manager_configuration_file_path: resources/sb3/scenario_manager_configuration.yaml
+scenarios_folder_path: resources/training_scenarios

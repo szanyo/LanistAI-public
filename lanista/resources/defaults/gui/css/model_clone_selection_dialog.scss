@@ -1,0 +1,118 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+ModelCloneSelectionDialog {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#model_clone_selection_dialog_container {
+    width: 96;
+    max-width: 96;
+    height: 54;
+    min-height: 46;
+    max-height: 90vh;
+    padding: 1 3;
+}
+
+#model_clone_selection_dialog_scroll {
+    width: 1fr;
+    height: 1fr;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#model_clone_selection_dialog_content {
+    width: 1fr;
+    height: auto;
+    min-height: 0;
+}
+
+#clone_selection_workspace {
+    width: 1fr;
+    height: 1fr;
+    min-height: 0;
+}
+
+#clone_selection_source_column,
+#clone_selection_target_column {
+    width: 1fr;
+    height: 1fr;
+    min-height: 0;
+}
+
+#clone_selection_transfer_column {
+    width: 8;
+    height: 1fr;
+    min-height: 0;
+    align: center middle;
+    padding: 0;
+}
+
+#clone_selection_source_search {
+    height: 3;
+    min-height: 3;
+    margin-bottom: 1;
+}
+
+#clone_selection_target_search {
+    height: 3;
+    min-height: 3;
+    margin-bottom: 1;
+}
+
+#clone_selection_source_tree,
+#clone_selection_target_tree {
+    width: 1fr;
+    height: 1fr;
+    min-height: 0;
+    padding: 0 1;
+    overflow-y: auto;
+}
+
+#clone_selection_source_tree > .tree--cursor,
+#clone_selection_target_tree > .tree--cursor {
+    color: $text;
+    background: $primary 20%;
+}
+
+#clone_selection_source_tree > .tree--highlight-line,
+#clone_selection_target_tree > .tree--highlight-line {
+    background: $primary 10%;
+}
+
+#clone_selection_approve,
+#clone_selection_remove {
+    width: 6;
+    min-width: 6;
+    max-width: 6;
+    height: 3;
+    min-height: 3;
+    max-height: 3;
+    padding: 0;
+    content-align: center middle;
+    text-align: center;
+    text-wrap: nowrap;
+    margin-bottom: 1;
+}
+
+#clone_selection_actions {
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+    margin-top: 1;
+    content-align: center middle;
+}
+
+#clone_selection_confirm,
+#clone_selection_cancel {
+    width: 1fr;
+}
+
+#clone_selection_confirm {
+    margin-right: 2;
+}

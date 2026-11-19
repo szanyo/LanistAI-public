@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Styles the Help modal screen backdrop. */
+HelpDialog {
+    padding: 0;
+    background: black 55%;
+}
+
+/* Keeps the Help scroll area stable when the scrollbar appears. */
+#help_dialog_scroll {
+    scrollbar-gutter: stable;
+    background: $surface;
+}
+
+/* Styles the Markdown body inside the Help dialog. */
+#help-markdown {
+    margin: 0;
+    padding: 0 1;
+    background: $surface;
+}
+
+/* Styles second-level headings in the Help Markdown content. */
+#help-markdown MarkdownH2 {
+    color: $accent;
+    background: transparent;
+    margin: 0;
+    margin-top: 1;
+    padding: 0;
+    text-style: bold;
+}
+
+/* Styles third-level headings in the Help Markdown content. */
+#help-markdown MarkdownH3 {
+    color: $accent;
+    background: transparent;
+    margin: 0;
+    margin-top: 1;
+    padding: 0;
+}
+
+/* Styles block quotes in the Help Markdown content. */
+#help-markdown MarkdownBlockQuote {
+    background: $background;
+}
+
+/* Makes the Help dialog cancel button fill the action row. */
+#help_dialog_cancel {
+    width: 1fr;
+}

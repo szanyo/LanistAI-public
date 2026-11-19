@@ -1,0 +1,10 @@
+schema_version: 1
+model:
+  name: susan_project
+  uuid: 373536c8-406e-46a4-97ce-b6a490f0b8f2
+  version: v1.3.232
+  description: ''
+  created_at: '2026-05-05T10:35:14Z'
+  modified_at: '2026-05-05T10:35:14Z'
+  parent_model_uuid: 329ade48-dfa4-4f41-a933-3fbad1fd3ad1
+  archived: false

@@ -1,0 +1,249 @@
+/*
+ * Copyright (c) 2025-2026 Benedek Szanyó.
+ * Copyright (c) 2025-2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+ControlPanel {
+    height: auto;
+    padding: 0 1;
+    background: $background;
+}
+
+InfoPanel {
+    height: auto;
+    padding: 0;
+    background: $background;
+}
+
+Button {
+    width: 10;
+    height: 3;
+    padding: 0 0;
+    content-align: center middle;
+}
+
+#rl_model_status {
+    width: auto;
+    text-style: bold;
+    content-align: center middle;
+    height: 1;
+    color: $text;
+    background: $background;
+}
+
+#rl_model_substatus {
+    width: auto;
+    content-align: center middle;
+    height: 1;
+    color: $text;
+    background: $background;
+}
+
+#progress {
+    width: auto;
+    height: 1;
+    margin: 1 0 1 1;
+    background: $background;
+}
+
+#progress_elapsed {
+    width: 19;
+    min-width: 19;
+    height: 1;
+    margin: 1 1;
+    color: $text-muted;
+    content-align: left middle;
+}
+
+LogCatConsolePanel {
+    height: 1fr;
+    min-height: 10;
+    background: $background;
+    border: round $accent;
+}
+
+#main_container {
+    height: auto;
+}
+
+#info_panel {
+    border: round $accent;
+    margin: 0;
+    padding: 0 1;
+    background: $background;
+}
+
+.info_panel_item {
+    height: 1;
+    margin: 0;
+    padding: 0;
+    color: $text;
+    background: $background;
+}
+
+#mode_toggle_container {
+    width: 1fr;
+    height: 1;
+    align: center middle;
+    margin: 0;
+    padding: 0;
+}
+
+#framework_toggle_container {
+    width: 1fr;
+    height: 1;
+    align: center middle;
+    margin: 0;
+    padding: 0;
+}
+
+#selector_row {
+    height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#phase_select,
+#phase_select:focus,
+#phase_select:disabled,
+#framework_select,
+#framework_select:focus,
+#framework_select:disabled {
+    width: 1fr;
+    height: 1;
+    min-height: 1;
+    max-height: 1;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#phase_select > SelectCurrent,
+#phase_select > SelectCurrent:focus,
+#phase_select > SelectCurrent:disabled,
+#framework_select > SelectCurrent,
+#framework_select > SelectCurrent:focus,
+#framework_select > SelectCurrent:disabled {
+    height: 1;
+    min-height: 1;
+    max-height: 1;
+    margin: 0;
+    padding: 0 1;
+}
+
+#phase_select > SelectCurrent > Static,
+#framework_select > SelectCurrent > Static {
+    height: 1;
+    min-height: 1;
+    max-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#rl_model_mode_tabs_content {
+    width: 100%;
+    background: $background;
+    padding-top: 0;
+}
+
+#progress_container {
+    height: 3;
+    margin: 0;
+    align: center middle;
+}
+
+#rl_model_status_container {
+    height: 2;
+    margin: 0;
+}
+
+#rl_status_stack {
+    height: 2;
+}
+
+#button_container {
+    align: center middle;
+    height: 3;
+    margin-top: 0;
+
+    & Button {
+        width: 1fr;
+        min-width: 16;
+        max-width: 24;
+        padding: 0 1;
+    }
+}
+
+#inspection_server_status {
+    width: 1fr;
+    height: 2;
+    margin-top: 1;
+    color: $text-muted;
+    content-align: center middle;
+}
+
+#inspection_native_status,
+#inspection_analysis_status {
+    width: 1fr;
+    height: 1;
+    content-align: center middle;
+}
+
+#inspection_viewer_container {
+    align: center middle;
+    width: 1fr;
+    height: 3;
+    margin-top: 0;
+
+    & Button {
+        width: 1fr;
+        min-width: 20;
+        max-width: 32;
+        padding: 0 1;
+    }
+}
+
+#management_button_container {
+    align: center middle;
+    height: 3;
+    margin-top: 0;
+
+    & Button {
+        width: 1fr;
+        min-width: 16;
+        max-width: 24;
+        padding: 0 1;
+    }
+}
+
+#secondary_management_button_container {
+    align: center middle;
+    height: 3;
+    margin-top: 0;
+
+    & Button {
+        width: 1fr;
+        min-width: 16;
+        max-width: 24;
+        padding: 0 1;
+    }
+}
+
+#model_selector_panel {
+    width: 60;
+    background: $background;
+    border: round $accent;
+}
+
+#model_selector_panel > #rl_model_tree {
+        background: $background;
+    }
+
+#control_panel {
+    padding: 0 1;
+    background: $background;
+    border: round $accent;
+    height: auto;
+    overflow-y: auto;
+}

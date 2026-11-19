@@ -1,0 +1,65 @@
+# Copyright (c) 2026 Benedek Szanyó.
+# Copyright (c) 2026 HUN-REN SZTAKI.
+# All rights reserved.
+
+[build-system]
+requires = ["setuptools>=78.1.1", "wheel>=0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LanistAI"
+version = "1.0.0"
+description = "A modular reinforcement-learning training, evaluation, and inference workbench"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "cvxopt==1.3.2",
+    "gymnasium==1.1.1",
+    "libsumo==1.27.1",
+    "numpy==2.3.2",
+    "platformdirs==4.4.0",
+    "psutil==7.2.2",
+    "pydantic==2.13.4",
+    "pyfiglet==1.0.4",
+    "PyYAML==6.0.2",
+    "ray[rllib]==2.49.1",
+    "rich==14.1.0",
+    "stable-baselines3==2.7.0",
+    "tensorboard==2.20.0",
+    "terminaltexteffects==0.12.0",
+    "textual==6.1.0",
+    "textualeffects==0.1.4",
+    "torch==2.8.0",
+]
+
+[project.scripts]
+lanista = "lanista.app:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lanista", "lanista.*"]
+exclude = [
+    "lanista.dev",
+    "lanista.dev.*",
+    "lanista.rl_model_storage.models.*",
+    "lanista.tests",
+    "lanista.tests.*",
+]
+namespaces = false
+
+[tool.setuptools.package-data]
+lanista = [
+    "resources/defaults/app/config.yaml",
+    "resources/defaults/app/logging.yaml",
+    "resources/defaults/gui/css/*.scss",
+    "resources/defaults/gui/mds/*.md",
+    "resources/defaults/gui/splash/effects.yaml",
+    "resources/model_templates/ray/*.py",
+    "resources/model_templates/ray/*.yaml",
+    "resources/model_templates/sb3/*.py",
+    "resources/model_templates/sb3/*.yaml",
+]
+

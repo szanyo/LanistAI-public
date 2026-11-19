@@ -1,0 +1,181 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Defines the main two-column grid used by the Configuration dialog. */
+#dialog_startup_cfg {
+    grid-size: 2 10;
+    grid-gutter: 1 1;
+    grid-columns: 1fr 1fr;
+    grid-rows: 12 3 3 3 3 3 3 3 3 3;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Gives all primary Configuration dialog selectors and placeholders full-row sizing. */
+#dialog_mode_select,
+#dialog_framework_select,
+#dialog_model_select,
+#dialog_session_select,
+#dialog_checkpoint_select,
+#dialog_mode_placeholder,
+#dialog_framework_placeholder,
+#dialog_session_placeholder,
+#dialog_checkpoint_placeholder {
+    column-span: 2;
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+    margin: 0;
+    content-align: center middle;
+}
+
+/* Pairs the Evaluation profile and scenario selectors on one compact row. */
+#dialog_evaluation_visualization_select,
+#dialog_evaluation_scenario_select {
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+    margin: 0;
+}
+
+/* The Library target replaces the paired scenario selector with one full-width profile. */
+#dialog_evaluation_visualization_select.library-target,
+#dialog_evaluation_library_hint {
+    column-span: 2;
+}
+
+#dialog_evaluation_library_hint {
+    height: 3;
+    min-height: 3;
+    padding: 0 1;
+    content-align: left middle;
+    color: $text-muted;
+}
+
+/* Keeps Textual Select current-value widgets aligned with the selector row height. */
+#dialog_mode_select > SelectCurrent,
+#dialog_evaluation_visualization_select > SelectCurrent,
+#dialog_evaluation_scenario_select > SelectCurrent,
+#dialog_framework_select > SelectCurrent,
+#dialog_session_select > SelectCurrent,
+#dialog_checkpoint_select > SelectCurrent {
+    height: 3;
+    min-height: 3;
+    padding: 0 1;
+}
+
+/* Applies bordered field styling to Configuration dialog selector-like buttons. */
+#dialog_session_select,
+#dialog_model_select,
+#dialog_checkpoint_select {
+    border: round $primary-lighten-1 50%;
+    background: $surface;
+    content-align: left middle;
+    text-align: left;
+}
+
+/* Highlights focused selector-like buttons in the Configuration dialog. */
+#dialog_session_select:focus,
+#dialog_model_select:focus,
+#dialog_checkpoint_select:focus {
+    border: round $accent;
+}
+
+/* Frames the scrollable Configuration Status tree area. */
+#dialog_configuration_status_scroll {
+    column-span: 2;
+    width: 1fr;
+    min-height: 12;
+    height: 12;
+    border: round $primary-lighten-1 50%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+/* Styles the Configuration Status tree content. */
+#dialog_configuration_status_tree {
+    min-height: 12;
+    height: auto;
+    width: auto;
+    padding: 0 1;
+    background: $surface;
+    border: none;
+}
+
+/* Highlights the active cursor row in the Configuration Status tree. */
+#dialog_configuration_status_tree > .tree--cursor {
+    color: $text;
+    background: $primary 20%;
+    text-style: bold;
+}
+
+/* Applies a subtle background to the highlighted Configuration Status tree line. */
+#dialog_configuration_status_tree > .tree--highlight-line {
+    background: $primary 10%;
+}
+
+/* Makes Configuration dialog command buttons fill their grid cells. */
+#dialog_new_model,
+#dialog_inspect,
+#dialog_compare,
+#dialog_new_session,
+#dialog_confirm,
+#dialog_cancel {
+    width: 1fr;
+}
+
+/* Lays out the Configuration dialog command button rows. */
+#dialog_model_actions_top,
+#dialog_model_actions_secondary,
+#dialog_model_actions_bottom {
+    column-span: 2;
+    grid-size: 2 1;
+    grid-columns: 1fr 1fr;
+    grid-gutter: 1 2;
+    width: 1fr;
+    height: auto;
+}
+
+/* Removes extra margins from command buttons inside Configuration action rows. */
+#dialog_model_actions_top > Button,
+#dialog_model_actions_secondary > Button,
+#dialog_model_actions_bottom > Button {
+    width: 1fr;
+    margin: 0;
+}
+
+#edit_target_model_select,
+#edit_target_session_select,
+#edit_target_checkpoint_select,
+#edit_target_model_lineage,
+#edit_target_session_lineage {
+    border: round $primary-lighten-1 50%;
+    background: $surface;
+}
+
+#edit_target_model_select:focus,
+#edit_target_session_select:focus,
+#edit_target_checkpoint_select:focus,
+#edit_target_model_lineage:focus,
+#edit_target_session_lineage:focus {
+    border: round $accent;
+}
+
+#edit_target_edit {
+    border: round $primary-lighten-1 50%;
+    background: $primary;
+}
+
+#edit_target_model_lineage,
+#edit_target_session_lineage,
+#edit_target_edit,
+#edit_target_cancel {
+    width: 1fr;
+}
+
+#lineage_detail_cancel {
+    width: 1fr;
+}

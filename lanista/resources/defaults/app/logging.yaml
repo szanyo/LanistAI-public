@@ -1,0 +1,54 @@
+# Copyright (c) 2025-2026 Benedek Szanyó.
+# Copyright (c) 2025-2026 HUN-REN SZTAKI.
+# All rights reserved.
+
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  fileFormatter:
+    class: lanista.foundation.logging.DecisionFormatter
+    format: '%(asctime)s | %(name)s | %(filename)s:%(lineno)d | %(levelname)s | %(message)s'
+
+  logcatFormatter:
+    class : lanista.foundation.logging.DictFormatter
+
+handlers:
+  permanent:
+    filename: data/logs/permanent.log
+    level: ERROR
+    class: logging.FileHandler
+    formatter: fileFormatter
+
+  rotate:
+    filename: data/logs/rotate.log
+    level: WARNING
+    class: logging.handlers.RotatingFileHandler
+    formatter: fileFormatter
+    maxBytes: 10000
+    backupCount: 10
+
+  timed_rotate:
+    filename: data/logs/timed_rotate.log
+    level: INFO
+    class: logging.handlers.TimedRotatingFileHandler
+    formatter: fileFormatter
+    when: D
+    interval: 1
+    backupCount: 10
+
+  textual_richlog_console:
+    level: DEBUG
+    class: lanista.gui.utils.custom_logging.CustomRichLogHandler
+    rich_tracebacks: True
+    show_time: True
+
+loggers:
+  lanistai:
+    level: DEBUG
+    handlers: [permanent, rotate, timed_rotate, textual_richlog_console]
+    propagate: False
+
+root:
+  level: DEBUG
+  handlers: [permanent]

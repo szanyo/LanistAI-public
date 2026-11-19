@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2025-2026 Benedek Szanyó.
+ * Copyright (c) 2025-2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+ByteEditorWidget > Container {
+    height: 1fr;
+    align: center middle;
+}
+
+ByteEditorWidget > Container.top {
+    background: $boost;
+}
+
+ByteEditorWidget Input {
+    width: 16;
+}

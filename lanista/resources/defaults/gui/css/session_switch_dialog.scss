@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Styles the Session Switch dialog title. */
+#session_switch_title {
+    height: 1;
+    content-align: center middle;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+/* Styles the session selector in the Session Switch dialog. */
+#session_switch_select {
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+    margin: 0;
+    content-align: center middle;
+    margin-bottom: 1;
+}
+
+/* Keeps the session Select current-value widget aligned with the selector height. */
+#session_switch_select > SelectCurrent {
+    height: 3;
+    min-height: 3;
+    padding: 0 1;
+}
+
+/* Styles the Session Switch action row. */
+#session_switch_actions {
+    height: 3;
+    min-height: 3;
+    content-align: center middle;
+}
+
+/* Makes Session Switch action buttons fill their columns. */
+#session_switch_delete,
+#session_switch_load,
+#session_switch_cancel {
+    width: 1fr;
+}
+
+/* Adds spacing between Session Switch primary actions. */
+#session_switch_delete,
+#session_switch_load {
+    margin-right: 2;
+}

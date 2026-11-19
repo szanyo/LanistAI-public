@@ -1,0 +1,104 @@
+# Copyright (c) 2025-2026 Benedek Szanyó.
+# Copyright (c) 2025-2026 HUN-REN SZTAKI.
+# All rights reserved.
+
+BinaryPath:
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+  # binary_color: [GREY, LIGHT_BLUE]
+  movement_speed: 2
+  active_binary_groups: 0.1
+
+Burn:
+  starting_color: DARK_BLUE
+  # burn_colors: LIGHT_BLUE
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+
+Decrypt:
+  typing_speed: 2
+  # chiphertext_color: LIGHT_BLUE
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+
+Expand:
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_frames: 5
+  final_gradient_direction: HORIZONTAL
+  movement_speed: 0.35
+  expand_easing: in_out_quart
+
+Highlight:
+  highlight_brightness: 1.75
+  # highlight_direction:
+  highlight_width: 1
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+
+#Matrix:
+#  matrix_speed: 0.1
+
+MiddleOut:
+  starting_color: DARK_BLUE
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+  # expand_direction: horizontal  # or vertical
+  center_movement_speed: 0.1
+  full_movement_speed: 0.1
+  center_easing: in_out_quart
+  full_easing: in_out_quart
+
+Print:
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+  print_head_return: 2.25
+  print_speed: 2
+  print_head_easing: in_out_quart
+
+  # For configuration options, see:
+  # https://chrisbuilds.github.io/terminaltexteffects/showroom/#print
+  # https://github.com/ChrisBuilds/terminaltexteffects/blob/main/terminaltexteffects/effects/effect_print.py
+
+Scattered:
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_frames: 12
+  final_gradient_direction: HORIZONTAL
+  movement_speed: 0.20
+  scatter_easing: in_out_quart
+
+Sweep:
+  # sweep_symbol: " "
+  first_sweep_direction: row_top_to_bottom
+  second_sweep_direction: row_top_to_bottom
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+
+Unstable:
+  unstable_color: DARK_BLUE
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+  explosion_ease: out_expo
+  explosion_speed: 0.75
+  reassembly_ease: out_expo
+  reassembly_speed: 0.75
+
+VHSTape:
+  final_gradient_stops: [LIGHT_BLUE, BLUISH_GREY]
+  # final_gradient_steps: 1
+  final_gradient_direction: HORIZONTAL
+  # glitch_line_colors: rainbow
+  # glitch_wave_colors: rainbow
+  # noise_colors: rainbow
+  glitch_line_speed: 0.05
+  noise_line_chance: 0.004
+  total_glitch_time: 500

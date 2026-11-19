@@ -1,0 +1,9 @@
+schema_version: 1
+model_configuration:
+  preferred_framework_uuid: ray
+  active_runtime_framework_uuid: sb3
+  selected_default_model_name: ''
+  selected_default_checkpoint_name: ''
+  framework_resource_paths:
+    ray: resources/ray
+    sb3: resources/sb3

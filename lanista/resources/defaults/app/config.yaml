@@ -1,0 +1,49 @@
+theme: textual-dark
+sudo: true
+version: v1.0.0
+about:
+  creators:
+  - Benedek Szanyó, BSc
+  research_advisors:
+  - Balázs Németh, DSc
+  - Dániel Fényes, PhD
+  contributors:
+  - Bence Jekl, MSc — provided the initial foundation for the project.
+  research_institute: HUN-REN Institute for Computer Science and Control (HUN-REN
+    SZTAKI)
+  creation_year: 2024-2026
+logs:
+  globally:
+    level: DEBUG
+gui:
+  splash_screen: false
+  maximize_terminal: true
+  fullscreen: false
+training:
+  use_gpu: false
+inspection:
+  auto_open_native_tensorboard: false
+  auto_open_analysis_dashboard: false
+rl_frameworks:
+  ray:
+    name: Ray RLlib
+    symbol: 🧠
+    profiles:
+      single:
+        local_mode: true
+        configure_logging: true
+      multi:
+        local_mode: false
+        configure_logging: true
+  sb3:
+    name: Stable Baselines 3
+    symbol: 🧬
+    profiles:
+      single:
+        local_mode: true
+        configure_logging: false
+      multi:
+        local_mode: false
+        configure_logging: true
+sumo_home: /usr/share/sumo
+random_route_generator_script_file_path: tools/randomTrips.py

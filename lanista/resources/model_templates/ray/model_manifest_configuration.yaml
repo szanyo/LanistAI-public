@@ -1,0 +1,28 @@
+# Copyright (c) 2026 Benedek Szanyó.
+# Copyright (c) 2026 HUN-REN SZTAKI.
+# All rights reserved.
+
+schema_version: 1
+algorithm:
+  name: template
+  running_profile: {{RUNNING_PROFILE}}
+model_implementation:
+  module: {{MODEL_MODULE_PATH}}
+  object: {{MODEL_OBJECT}}
+rl_engine_framework:
+  uuid: {{FRAMEWORK_UUID}}
+  version: ""
+scenario_manager_configuration_file_path: {{SCENARIO_CONFIG_PATH}}
+scenarios_folder_path: {{SCENARIOS_FOLDER_PATH}}
+checkpoint_saving_frequency: 50000
+evaluation_frequency: 100000
+evaluation_deterministic: true
+runtime:
+  evaluation:
+    n_eval_episodes: 1
+    visualization: gui
+    pacing: maximum-throughput
+  scenario_selection:
+    training_start_index: 0
+    deployment_index: 0
+    evaluation_index: 0

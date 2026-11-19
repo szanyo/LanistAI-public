@@ -1,0 +1,55 @@
+# Copyright (c) 2026 Benedek Szanyó.
+# Copyright (c) 2026 HUN-REN SZTAKI.
+# All rights reserved.
+
+random_scenarios_configuration:
+  route_filename_prefix: route
+  trip_filename_prefix: trip
+  scenario_wrapper_directory_prefix: random_scenario
+  number_of_scenarios: 20
+
+traffic_definition:
+  general_vehicles_configuration:
+    route_filename_prefix: vehicle_route
+    trip_filename_prefix: vehicle_trip
+    trip_attributes: maxSpeed="8.5"
+    vehicle_class: passenger
+    begin_time: 0 # Start time of random trip distribution in SUMO simulation seconds
+    end_time: 300 # End time of random trip distribution in SUMO simulation seconds
+    fringe_factor: 10
+    min_distance: 50
+    period: 1.5
+
+  general_pedestrians_configuration:
+    trip_filename_prefix: pedestrian_trip
+    route_filename_prefix: pedestrian_route
+    trip_attributes: type="pedestrian"
+    prefix: pedestrian_
+    begin_time: 0 # Start time of random trip distribution in SUMO simulation seconds
+    end_time: 500 # End time of random trip distribution in SUMO simulation seconds
+    min_distance: 30
+    max_distance: 100
+    fringe_factor: 10
+    period: 5
+    desired_max_speed: 0.6
+
+traffic_flow_definition:
+  adaptive_vehicle_flow_configuration:
+    initial_number_of_vehicles: 10
+    target_number_of_vehicles: 200
+
+  adaptive_pedestrian_flow_configuration:
+    initial_number_of_pedestrians: 1
+    target_number_of_pedestrians: 25
+
+sumo_configuration:
+  network_filename: resources/ZalaZone_full.net.xml
+  gui_settings_filename: resources/gui-settings.xml
+
+simulation_configuration:
+  begin_time: 0 # SUMO simulation start time in seconds
+  end_time: 3600 # Covers max warmup + startup + all 7000 active policy steps (required maximum: 410.05 s)
+  time_to_teleport: -1 # SUMO teleport timeout in simulation seconds; -1 means no teleportation
+  step_length: 0.05 # Simulation step length in seconds
+  max_timesteps: 7000 # Guaranteed policy-controlled steps after warmup (350 active simulation seconds)
+  no_warnings: true

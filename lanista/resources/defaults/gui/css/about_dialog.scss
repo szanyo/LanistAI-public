@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Styles the About modal screen backdrop. */
+AboutDialog {
+    background: black 55%;
+    padding: 0;
+}
+
+/* Sizes the About dialog content area inside the shared modal frame. */
+#about_dialog_content {
+    width: 1fr;
+    height: 1fr;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+/* Adds vertical breathing room around the rendered About text. */
+#about_text {
+    padding: 1 0;
+}
+
+/* Centers the shared SZTAKI mark as one fixed-width block below About content. */
+#about_sztaki_logo {
+    width: 100%;
+    height: auto;
+    margin-top: 1;
+    content-align: center middle;
+    text-align: center;
+}
+
+/* Centers the legal notice directly below the SZTAKI mark. */
+#about_copyright {
+    width: 100%;
+    height: auto;
+    margin: 1 0;
+    color: $text-muted;
+    content-align: center middle;
+    text-align: center;
+}
+
+/* Makes the About dialog cancel button fill the action row. */
+#about_dialog_cancel {
+    width: 1fr;
+}

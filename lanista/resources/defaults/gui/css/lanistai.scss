@@ -1,0 +1,973 @@
+/*
+ * Copyright (c) 2025-2026 Benedek Szanyó.
+ * Copyright (c) 2025-2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+$main-lighten-2: $primary-lighten-2;
+$main-lighten-1: $primary-lighten-1;
+$main: $primary;
+$main-darken-1: $primary-darken-1;
+$main-darken-2: $primary-darken-2;
+$main-border-text-color: $accent;
+$main-border-color: $main-lighten-1 50%;
+$main-border-color-focus: $main-lighten-1 100%;
+
+$left-border-trim: vkey $main-lighten-2 15%;
+
+/* Defines global scrollbar and link interaction colors. */
+* {
+  scrollbar-color: $accent 30%;
+  scrollbar-color-hover: $accent 50%;
+  scrollbar-color-active: $accent 80%;
+  scrollbar-background: $surface-darken-1;
+  scrollbar-background-hover: $surface-darken-1;
+  scrollbar-background-active: $surface-darken-1;
+  scrollbar-size-vertical: 1;
+  link-style: none;
+  link-color-hover: $accent;
+  link-background-hover: $main 0%;
+  link-style-hover: u not dim bold;
+}
+
+/* Styles the active underline bar in tab controls. */
+Tabs .underline--bar {
+  color: $main-lighten-2 50%;
+  background: $main 75%;
+}
+
+/* Styles the base application screen and inline screen variant. */
+Screen {
+  background: $background;
+  &:inline {
+    height: 80vh;
+    padding: 0 2;
+  }
+}
+
+/* Styles the shared modal backdrop and default modal field borders. */
+ModalScreen {
+  background: black 25%;
+  padding: 0;
+  &:inline {
+    padding: 0;
+    border: none;
+  }
+
+  & Input,
+  & TextArea,
+  & Tree,
+  & Static {
+    border-title-color: $text-muted;
+    border-title-background: $surface;
+  }
+
+  & Input,
+  & TextArea,
+  & Tree {
+    border: round $main-border-color;
+    background: $surface;
+  }
+
+  & Input:focus,
+  & TextArea:focus,
+  & Tree:focus {
+    border: round $accent;
+  }
+}
+
+/* Highlights focused buttons across the app. */
+Button:focus {
+  border: tall $accent;
+}
+
+/* Styles the current value surface for Select widgets. */
+Select > SelectCurrent {
+  border: round $main-border-color;
+  background: $surface;
+}
+
+/* Highlights focused Select widgets. */
+Select:focus > SelectCurrent {
+  border: round $accent;
+}
+
+/* Styles highlighted options inside OptionList widgets. */
+OptionList > .option-list--option-highlighted {
+  color: $background;
+  background: $accent 45%;
+  text-style: bold;
+}
+
+/* Highlights focused OptionList widgets. */
+OptionList:focus {
+  border: tall $accent;
+}
+
+/* Strengthens the highlighted option when the OptionList has focus. */
+OptionList:focus > .option-list--option-highlighted {
+  color: $background;
+  background: $accent;
+  text-style: bold;
+}
+
+/* Centers all modal dialog screen classes on the terminal viewport. */
+RunConfigurationDialog,
+ConfigurationDialog,
+SessionConfigurationDialog,
+CheckpointConfigurationDialog,
+SessionSwitchDialog,
+NewSessionStrategyDialog,
+LoadModelDialog,
+TensorboardPackDialog,
+ComparisonPackBuilderDialog,
+EditTargetSelectionDialog,
+ModelCreationScreen,
+ModelCloneSelectionDialog,
+ModelContextDialog,
+ModelDetailEditDialog,
+LineageDetailDialog,
+HelpDialog,
+AboutDialog,
+SettingsScreen,
+YesNoDialog,
+SecureYesNoDialog,
+DeveloperToolsDialog {
+  align: center middle;
+  padding: 0 0 1 0;
+}
+
+/* Shared modal frame for every dialog container. */
+#configuration_dialog_container,
+#session_configuration_dialog_container,
+#checkpoint_configuration_dialog_container,
+#session_switch_dialog_container,
+#new_session_strategy_dialog_container,
+#load_model_dialog_container,
+#model_creation_dialog_container,
+#model_clone_selection_dialog_container,
+#model_context_dialog_container,
+#model_detail_dialog_container,
+#lineage_detail_dialog_container,
+#help_dialog_container,
+#about_dialog_container,
+#settings_dialog_container,
+#dialog_ynd_container,
+#dialog_synd_container,
+#tensorboard_pack_dialog_container,
+#compare_pack_builder_dialog_container,
+#edit_target_dialog_container,
+#developer_tools_dialog_container,
+#dialog_ynd,
+#dialog_synd {
+  border: thick $background 80%;
+  border-title-color: $accent;
+  border-title-background: $surface;
+  border-title-style: bold;
+  background: $surface;
+}
+
+/* Shared dialog width for all modal containers, including compact exception dialogs. */
+#configuration_dialog_container,
+#session_configuration_dialog_container,
+#checkpoint_configuration_dialog_container,
+#session_switch_dialog_container,
+#load_model_dialog_container,
+#tensorboard_pack_dialog_container,
+#compare_pack_builder_dialog_container,
+#edit_target_dialog_container,
+#model_context_dialog_container,
+#model_detail_dialog_container,
+#lineage_detail_dialog_container,
+#help_dialog_container,
+#about_dialog_container,
+#settings_dialog_container,
+#model_creation_dialog_container,
+#model_clone_selection_dialog_container,
+#new_session_strategy_dialog_container,
+#developer_tools_dialog_container,
+#dialog_ynd_container,
+#dialog_synd_container {
+  width: 96;
+  max-width: 96;
+}
+
+/* Standard large-dialog height, matched to ConfigurationDialog. */
+#configuration_dialog_container,
+#session_configuration_dialog_container,
+#checkpoint_configuration_dialog_container,
+#session_switch_dialog_container,
+#load_model_dialog_container,
+#tensorboard_pack_dialog_container,
+#compare_pack_builder_dialog_container,
+#edit_target_dialog_container,
+#model_context_dialog_container,
+#model_detail_dialog_container,
+#lineage_detail_dialog_container,
+#help_dialog_container,
+#about_dialog_container,
+#settings_dialog_container,
+#model_creation_dialog_container,
+#model_clone_selection_dialog_container,
+#new_session_strategy_dialog_container,
+#developer_tools_dialog_container {
+  height: 54;
+  min-height: 46;
+  max-height: 90vh;
+  padding: 1 3;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Scrollable body area inside large dialogs. */
+#dialog_startup_cfg_scroll,
+#session_configuration_dialog_scroll,
+#checkpoint_configuration_dialog_scroll,
+#load_model_dialog_scroll,
+#compare_pack_builder_scroll,
+#edit_target_dialog_scroll,
+#model_creation_dialog_scroll,
+#model_clone_selection_dialog_scroll,
+#model_context_dialog_scroll,
+#model_detail_dialog_scroll,
+#lineage_detail_dialog_scroll,
+#settings_dialog_scroll,
+#tensorboard_pack_dialog_scroll,
+#help_dialog_scroll {
+  width: 1fr;
+  height: 1fr;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Main content wrapper inside large dialogs. */
+#dialog_startup_cfg,
+#session_configuration_dialog_content,
+#checkpoint_configuration_dialog_content,
+#load_model_dialog_content,
+#compare_pack_builder_content,
+#edit_target_dialog_content,
+#model_creation_dialog_content,
+#model_clone_selection_dialog_content,
+#model_context_dialog_content,
+#settings_dialog_content,
+#tensorboard_pack_dialog_content,
+#model_detail_edit_dialog {
+  width: 1fr;
+  height: auto;
+  min-height: 0;
+}
+
+/* Shared footer divider and spacing for modal binding bars. */
+#configuration_modal_footer,
+#session_configuration_modal_footer,
+#checkpoint_configuration_modal_footer,
+#load_model_modal_footer,
+#tensorboard_pack_modal_footer,
+#compare_pack_builder_modal_footer,
+#edit_target_modal_footer,
+#model_creation_modal_footer,
+#model_clone_selection_modal_footer,
+#new_session_modal_footer,
+#session_switch_modal_footer,
+#model_detail_modal_footer,
+#model_context_modal_footer,
+#lineage_detail_modal_footer,
+#developer_tools_modal_footer,
+#help_modal_footer,
+#about_modal_footer,
+#settings_modal_footer,
+#yes_no_modal_footer,
+#secure_yes_no_modal_footer {
+  width: 1fr;
+  margin-top: 1;
+  border-top: solid $panel;
+  padding-top: 1;
+}
+
+#settings_dialog_content {
+  padding: 1;
+}
+
+#settings_preferences_hint,
+#settings_inspection_hint,
+#settings_persistence_hint,
+#settings_inspection_open_hint {
+  width: 1fr;
+  height: auto;
+  color: $text-muted;
+  margin-bottom: 1;
+}
+
+#settings_inspection_open_actions {
+  margin-bottom: 1;
+}
+
+.settings-section-title {
+  width: 1fr;
+  height: 2;
+  color: $accent;
+  text-style: bold;
+}
+
+.settings-switch-row {
+  width: 1fr;
+  height: 3;
+  min-height: 3;
+  margin-bottom: 1;
+  padding: 0 1;
+  content-align: left middle;
+}
+
+.settings-switch-label {
+  width: 1fr;
+  height: 3;
+  content-align: left middle;
+}
+
+#settings_splash_screen,
+#settings_maximize_terminal,
+#settings_fullscreen,
+#settings_auto_open_native,
+#settings_auto_open_analysis {
+  width: auto;
+  height: 3;
+  min-width: 8;
+}
+
+/* Shared action row sizing for large dialog button bars. */
+#load_model_actions,
+#edit_target_lineage_actions,
+#edit_target_actions,
+#model_detail_lineage_actions,
+#session_configuration_actions,
+#checkpoint_configuration_actions,
+#model_detail_navigation_actions,
+#model_detail_actions,
+#help_dialog_actions,
+#about_dialog_actions {
+  width: 1fr;
+  height: 3;
+  min-height: 3;
+  margin-top: 1;
+  content-align: center middle;
+}
+
+/* Equal-width action grids shared by dialogs and persistent views. */
+.action-row {
+  layout: grid;
+  grid-size: 1 1;
+  width: 1fr;
+  height: 3;
+  min-height: 3;
+  margin-top: 1;
+  grid-gutter: 0 1;
+  content-align: center middle;
+}
+
+.action-row--2 {
+  grid-size: 2 1;
+}
+
+.action-row--3 {
+  grid-size: 3 1;
+}
+
+.action-row > Button {
+  width: 1fr;
+  min-width: 0;
+  height: 3;
+  margin: 0;
+  content-align: center middle;
+}
+
+/* Keep bounded action buttons grouped while retaining the shared one-cell gap. */
+.action-row--compact {
+  layout: horizontal;
+  align: center middle;
+}
+
+.action-row--compact > Button {
+  margin-right: 1;
+}
+
+.action-row--compact > Button:last-child {
+  margin-right: 0;
+}
+
+#compare_pack_builder_content {
+  height: auto;
+  min-height: 24;
+  padding: 1;
+}
+
+#compare_pack_builder_hint,
+#compare_pack_builder_footer_hint {
+  width: 1fr;
+  height: auto;
+  min-height: 1;
+  color: $text-muted;
+  content-align: center middle;
+}
+
+#compare_pack_builder_hint {
+  margin-bottom: 1;
+}
+
+#compare_pack_builder_name,
+#compare_pack_builder_rename_name {
+  width: 1fr;
+  margin-top: 1;
+}
+
+#compare_pack_builder_workspace,
+#compare_pack_builder_sources_panel,
+#compare_pack_builder_admin_panel {
+  width: 1fr;
+  height: auto;
+  min-height: 0;
+}
+
+#compare_pack_builder_source_region {
+  width: 1fr;
+  height: 12;
+  min-height: 11;
+}
+
+#compare_pack_builder_review_region {
+  width: 1fr;
+  height: 18;
+  min-height: 18;
+  margin-top: 1;
+}
+
+#compare_pack_builder_admin_panel {
+  height: auto;
+  min-height: 0;
+  margin-top: 1;
+}
+
+#compare_pack_builder_name,
+#compare_pack_builder_rename_name {
+  height: 3;
+  min-height: 3;
+  margin-bottom: 1;
+}
+
+#compare_pack_builder_source_tree,
+#compare_pack_builder_comparison_tree {
+  width: 1fr;
+  padding: 0 1;
+  border: round $main-border-color;
+  background: $surface;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+#compare_pack_builder_source_tree {
+  height: 1fr;
+  min-height: 11;
+  margin-right: 1;
+}
+
+#compare_pack_builder_comparison_tree {
+  height: 18;
+  min-height: 18;
+  margin-right: 1;
+}
+
+#compare_pack_builder_source_tree > .tree--cursor,
+#compare_pack_builder_comparison_tree > .tree--cursor {
+  color: $text;
+  background: $primary 20%;
+  text-style: bold;
+}
+
+#compare_pack_builder_selected,
+#compare_pack_builder_comparison_summary {
+  width: 1fr;
+  height: 11;
+  min-height: 11;
+}
+
+#compare_pack_builder_selected {
+  margin-top: 0;
+}
+
+#compare_pack_builder_comparison_summary {
+  height: 18;
+  min-height: 18;
+  margin: 0;
+}
+
+#compare_pack_builder_description_input {
+  height: 6;
+  min-height: 6;
+  margin-bottom: 1;
+}
+
+#compare_pack_builder_status {
+  width: 1fr;
+  height: 2;
+  min-height: 2;
+  padding: 0 1;
+  border-left: solid $primary;
+  color: $text-muted;
+  content-align: left middle;
+}
+
+/* Shared button height for primary modal actions. */
+#dialog_new_model,
+#dialog_new_session,
+#dialog_confirm,
+#dialog_cancel,
+#load_model_edit,
+#session_switch_delete,
+#session_switch_load,
+#session_switch_cancel,
+#session_configuration_edit,
+#new_session_strategy_fresh,
+#new_session_strategy_fork,
+#new_session_strategy_cancel,
+#clone_selection_approve,
+#clone_selection_remove,
+#clone_selection_confirm,
+#clone_selection_cancel,
+#model_detail_model_lineage,
+#model_detail_session_lineage,
+#model_detail_select_session,
+#model_detail_select_checkpoint,
+#model_detail_delete,
+#model_detail_delete_session,
+#model_detail_save,
+#model_detail_cancel,
+#edit_target_model_select,
+#edit_target_session_select,
+#edit_target_checkpoint_select,
+#edit_target_model_lineage,
+#edit_target_session_lineage,
+#edit_target_edit,
+#edit_target_cancel,
+#help_dialog_cancel,
+#about_dialog_cancel {
+  height: 3;
+  content-align: center middle;
+}
+
+/* Shared template base for dialog buttons reused across lineage flows. */
+.dialog-button-base {
+  width: 1fr;
+  height: 3;
+  min-height: 3;
+}
+
+Button.dialog-selector-button {
+  border: round $primary-lighten-1 50%;
+  background: $surface;
+  color: $text;
+  content-align: left middle;
+  text-align: left;
+  padding: 0 1;
+}
+
+Button.dialog-selector-button:focus,
+Button.dialog-selector-button:hover {
+  border: round $accent;
+  background: $surface;
+  color: $text;
+}
+
+#edit_target_model_select,
+#edit_target_session_select,
+#edit_target_checkpoint_select {
+  width: 1fr;
+  margin-top: 1;
+}
+
+#edit_target_lineage_previews {
+  width: 1fr;
+  height: 12;
+  min-height: 12;
+  margin-top: 1;
+}
+
+#edit_target_model_lineage_preview,
+#edit_target_session_lineage_preview {
+  width: 1fr;
+  height: 1fr;
+  min-height: 10;
+}
+
+#edit_target_model_lineage_preview {
+  margin-right: 1;
+}
+
+#edit_target_lineage_actions > Button,
+#edit_target_actions > Button {
+  width: 1fr;
+}
+
+#edit_target_lineage_actions > Button,
+#edit_target_edit {
+  margin-right: 1;
+}
+
+/* Shared width and spacing for Model Detail navigation buttons. */
+#model_detail_navigation_actions > Button {
+  width: 1fr;
+}
+
+#model_detail_navigation_actions > Button {
+  margin-right: 1;
+}
+
+#model_detail_navigation_actions > Button:last-child {
+  margin-right: 0;
+}
+
+/* Compact lineage preview columns used by the view dialog. */
+#model_context_dialog_content {
+  padding: 1;
+}
+
+#model_context_details_region {
+  width: 1fr;
+  height: 11;
+  min-height: 11;
+}
+
+#model_context_model_details,
+#model_context_session_details {
+  width: 1fr;
+  height: 11;
+  min-height: 11;
+}
+
+#model_context_model_details {
+  margin-right: 1;
+}
+
+#model_context_lineage_previews {
+  width: 1fr;
+  height: 10;
+  min-height: 10;
+  margin-top: 1;
+}
+
+#model_context_model_lineage_preview,
+#model_context_session_lineage_preview {
+  width: 1fr;
+  height: 10;
+  min-height: 10;
+}
+
+#model_context_model_lineage_preview {
+  margin-right: 1;
+}
+
+#model_context_hint,
+#tensorboard_pack_hint,
+#tensorboard_pack_preferences_hint {
+  width: 1fr;
+  height: auto;
+  min-height: 1;
+  color: $text-muted;
+  margin-bottom: 1;
+}
+
+#tensorboard_pack_dialog_content {
+  padding: 1;
+}
+
+#tensorboard_pack_model_selector {
+  width: 1fr;
+  height: 15;
+  min-height: 15;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1;
+}
+
+#tensorboard_pack_model_selector > #model_selector_search {
+  height: 3;
+  min-height: 3;
+  margin-bottom: 1;
+}
+
+#tensorboard_pack_model_selector > #model_selector_header {
+  height: 1;
+  min-height: 1;
+  padding: 0 1;
+  color: $text-muted;
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+}
+
+#tensorboard_pack_model_selector > #rl_model_tree {
+  width: 1fr;
+  height: 1fr;
+  min-height: 8;
+  padding: 0 1;
+  border: round $main-border-color;
+  background: $surface;
+  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+#tensorboard_pack_selection_region {
+  width: 1fr;
+  height: auto;
+  min-height: 0;
+}
+
+#tensorboard_pack_filter {
+  width: 1fr;
+  height: 3;
+  min-height: 3;
+  margin-bottom: 1;
+}
+
+#tensorboard_pack_workspace {
+  width: 1fr;
+  height: 19;
+  min-height: 19;
+}
+
+#tensorboard_pack_tree,
+#tensorboard_pack_details {
+  width: 1fr;
+  height: 1fr;
+  min-height: 17;
+}
+
+#tensorboard_pack_tree {
+  margin-right: 1;
+  padding: 0 1;
+  border: round $main-border-color;
+  background: $surface;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+#tensorboard_pack_tree > .tree--cursor {
+  color: $text;
+  background: $primary 20%;
+  text-style: bold;
+}
+
+#tensorboard_pack_tree > .tree--highlight-line {
+  background: $primary 10%;
+}
+
+
+/* Shared bordered panels used inside model and selection dialogs. */
+#model_detail_meta_panel,
+#training_chain_details,
+#training_chain_tree,
+.lineage_tree_widget_details,
+.lineage_tree_widget_tree,
+#dialog_model_selector_panel > #rl_model_tree {
+  border: round $main-border-color;
+  background: $surface;
+}
+
+/* Styles horizontal rules used as lightweight separators. */
+Rule {
+  color: white 20%;
+
+  &.-horizontal {
+    margin: 0 0;
+  }
+}
+
+/* Styles toast notifications and their severity accents. */
+Toast {
+  background: $background-darken-1;
+  border-right: none;
+  &.-information {
+    border-left: outer $main-lighten-1;
+    & .toast--title {
+      color: $main-lighten-2;
+    }
+  }
+
+  &.-warning {
+    border-left: outer $warning;
+    & .toast--title {
+      color: $warning;
+    }
+  }
+
+  &.-error {
+    border-left: outer $error;
+    & .toast--title {
+      color: $error;
+    }
+  }
+}
+
+/* Styles tooltip popovers. */
+Tooltip {
+  background: $background-darken-1;
+  border: wide $main-border-color;
+}
+
+/* Styles TextArea widgets and their focused editing states. */
+TextArea {
+  padding: 1 2;
+  border: round $main-border-color;
+  border-title-color: $main-border-text-color;
+  border-subtitle-color: $main-border-text-color;
+  &:focus {
+    border: round $main-border-color-focus;
+    border-title-style: bold;
+    & .text-area--selection {
+      background: $main 60%;
+    }
+  }
+  & .text-area--cursor-line {
+    background: $background 0%;
+  }
+
+  & .text-area--cursor-gutter {
+    background: $background 0%;
+  }
+  &:focus .text-area--cursor-gutter {
+    color: yellowgreen;
+    background: $background 0%;
+  }
+  & .text-area--selection {
+    background: $main-lighten-2 25%;
+  }
+
+  &.selection-mode {
+    border: none;
+    height: auto;
+    max-height: 75vh;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Styles the active line in multiline prompt inputs. */
+PromptInput.multiline .text-area--cursor-line {
+  background: white 3%;
+}
+
+/* Sizes prompt inputs embedded in the Home screen. */
+HomeScreen PromptInput {
+  height: auto;
+  max-height: 65%;
+
+  & TextArea {
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+/* Styles the AppHeader internal container. */
+AppHeader #cl-header-container {
+  height: auto;
+  background: $background;
+}
+
+/* Styles the fixed application header. */
+AppHeader {
+  dock: top;
+  width: 1fr;
+  padding: 1 2;
+  height: auto;
+  background: $background;
+
+  &:inline {
+    padding: 0 2 1 2;
+  }
+
+  & #elia-title {
+    color: $accent;
+    text-style: bold;
+  }
+
+  & Horizontal {
+    height: auto;
+  }
+
+  & #model-label {
+    border: none;
+    background: $main-darken-2 0%;
+    text-style: dim;
+  }
+}
+
+/* Styles Home screen chat and welcome widgets. */
+HomeScreen {
+  & ChatList {
+    padding: 0;
+    height: 1fr;
+    width: 1fr;
+    border: round $main-border-color;
+    border-title-color: $main-border-text-color;
+    border-subtitle-color: $main-border-text-color;
+
+    &:focus {
+      border: round $main-border-color-focus;
+      border-title-style: bold;
+      border-subtitle-color: $main-border-text-color;
+    }
+
+    &.-empty {
+      hatch: right $background-lighten-1;
+    }
+  }
+
+  & Welcome {
+    display: none;
+    border: round $main-border-color;
+    border-title-color: $main-border-text-color;
+    border-title-align: center;
+    border-title-style: bold;
+    padding: 0 1;
+    text-align: center;
+  }
+}
+
+/* Styles the application footer and footer key labels. */
+Footer {
+  background: transparent;
+
+  & FooterKey {
+    background: transparent;
+  }
+
+  .footer-key--key {
+    color: $accent;
+    background: transparent;
+  }
+}
+
+/* Styles the reusable ModalFooter widget layout. */
+.modal-footer {
+  width: 1fr;
+  height: auto;
+  min-height: 1;
+  margin-top: 1;
+  padding: 0 1;
+  content-align: left middle;
+  background: transparent;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Styles key labels inside ModalFooter. */
+.modal-footer--key {
+  color: $accent;
+  text-style: bold;
+}
+
+/* Styles action labels inside ModalFooter. */
+.modal-footer--label {
+  color: $text;
+}

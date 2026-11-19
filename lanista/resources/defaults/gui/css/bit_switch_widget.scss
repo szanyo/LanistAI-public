@@ -1,0 +1,15 @@
+/*
+ * Copyright (c) 2025-2026 Benedek Szanyó.
+ * Copyright (c) 2025-2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+BitSwitchWidget {
+    layout: vertical;
+    width: auto;
+    height: auto;
+}
+BitSwitchWidget > Label {
+    text-align: center;
+    width: 100%;
+}

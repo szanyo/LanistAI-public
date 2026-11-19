@@ -1,0 +1,139 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Prevents the Load Model modal screen itself from scrolling. */
+LoadModelDialog {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Removes nested panel chrome around the reusable model selector. */
+#dialog_model_selector_panel {
+    width: 1fr;
+    height: 17;
+    min-height: 0;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Styles the model search input inside the Load Model selector panel. */
+#dialog_model_selector_panel > #model_selector_search {
+    height: 3;
+    min-height: 3;
+    margin-bottom: 1;
+}
+
+/* Styles the column header row inside the Load Model selector panel. */
+#dialog_model_selector_panel > #model_selector_header {
+    height: 1;
+    min-height: 1;
+    margin-bottom: 0;
+    padding: 0 1;
+    color: $text-muted;
+    overflow-x: auto;
+    scrollbar-gutter: stable;
+}
+
+/* Sizes the valid-model tree inside the Load Model selector panel. */
+#dialog_model_selector_panel > #rl_model_tree {
+    width: 1fr;
+    height: 1fr;
+    min-height: 0;
+    padding: 0 1;
+    overflow-y: auto;
+    overflow-x: auto;
+    scrollbar-gutter: stable;
+}
+
+/* Wraps the valid model section in the Load Model dialog. */
+#load_model_valid_section {
+    width: 1fr;
+    height: auto;
+    min-height: 0;
+}
+
+/* Wraps the invalid model section and separates it from valid models. */
+#load_model_invalid_section {
+    width: 1fr;
+    height: auto;
+    min-height: 0;
+    margin-top: 1;
+    margin-bottom: 1;
+}
+
+/* Styles the invalid-model tree and its scrollable area. */
+#load_model_invalid_tree {
+    width: 1fr;
+    height: auto;
+    min-height: 6;
+    padding: 0 1;
+    overflow-y: auto;
+}
+
+/* Styles the current-model legend below the valid model list. */
+#load_model_legend {
+    height: 1;
+    min-height: 1;
+    margin-top: 0;
+    padding: 0 2;
+    color: $warning;
+}
+
+/* Lays out selected model metadata beside the compact lineage preview. */
+#load_model_preview_region {
+    width: 1fr;
+    height: 11;
+    min-height: 11;
+    margin-top: 1;
+}
+
+/* Gives the selected-model panel and lineage preview balanced columns. */
+#load_model_selected_details,
+#load_model_lineage_preview {
+    width: 1fr;
+    height: 11;
+    min-height: 11;
+}
+
+#load_model_selected_details {
+    margin-right: 1;
+}
+
+/* Wraps the Load Model action block into stacked rows. */
+#load_model_actions {
+    width: 1fr;
+    height: auto;
+    min-height: 0;
+    margin-top: 1;
+}
+
+/* Styles the standalone Edit row above the confirm/cancel row. */
+#load_model_actions_edit_row {
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+    margin-bottom: 1;
+}
+
+/* Styles the confirm/cancel row beneath the Edit button. */
+#load_model_actions_confirm_row {
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+}
+
+/* Makes the Load Model confirm and cancel buttons fill their columns. */
+#load_model_edit,
+#load_model_confirm,
+#load_model_cancel {
+    width: 1fr;
+}
+
+/* Adds spacing between the Load Model confirm and cancel buttons. */
+#load_model_confirm {
+    margin-right: 2;
+}

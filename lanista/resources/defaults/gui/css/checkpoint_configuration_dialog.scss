@@ -1,0 +1,63 @@
+/*
+ * Copyright (c) 2026 Benedek Szanyó.
+ * Copyright (c) 2026 HUN-REN SZTAKI.
+ * All rights reserved.
+ */
+
+/* Prevents the Checkpoint Configuration modal screen itself from scrolling. */
+CheckpointConfigurationDialog {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Styles the checkpoint search input at the top of the dialog. */
+#checkpoint_configuration_search {
+    height: 3;
+    min-height: 3;
+    margin-bottom: 1;
+}
+
+/* Styles the checkpoint tree that lists available checkpoint choices. */
+#checkpoint_configuration_tree {
+    width: 1fr;
+    min-height: 18; 
+    height: 18;
+    padding: 0 1;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/* Highlights the active cursor row in the checkpoint tree. */
+#checkpoint_configuration_tree > .tree--cursor {
+    color: $text;
+    background: $primary 20%;
+}
+
+/* Applies a subtle background to the highlighted checkpoint tree line. */
+#checkpoint_configuration_tree > .tree--highlight-line {
+    background: $primary 10%;
+}
+
+/* Styles the optional edit action used by the checkpoint selector flow. */
+#checkpoint_configuration_edit {
+    margin-top: 1;
+}
+
+/* Styles the destructive checkpoint delete action. */
+#checkpoint_configuration_delete {
+    width: 1fr;
+    height: 3;
+    min-height: 3;
+    margin-top: 1;
+}
+
+/* Makes the checkpoint confirmation and cancel buttons fill their columns. */
+#checkpoint_configuration_confirm,
+#checkpoint_configuration_cancel {
+    width: 1fr;
+}
+
+/* Adds spacing between the checkpoint confirm and cancel buttons. */
+#checkpoint_configuration_confirm {
+    margin-right: 2;
+}
