@@ -6,60 +6,20 @@ All rights reserved.
 
 # Authors and contributors
 
-The common project copyright holders are:
+## Paper authors
 
-- Benedek Szanyó
-- HUN-REN SZTAKI
+- Benedek Szanyó¹
+- Dániel Fényes¹
+- Balázs Németh¹ ²
+- Péter Gáspár¹ ²
 
-Contributor biographies, affiliations, and historical milestones belong here,
-not in source-file banners. A legacy `Date:` line records historical context
-only. It does not substitute for Git history or the copyright year policy.
+¹ Systems and Control Laboratory, HUN-REN Institute for Computer Science and Control (SZTAKI), Budapest, Hungary  
+² Department for Control of Transportation and Vehicle Systems, Budapest University of Technology and Economics, Budapest, Hungary
 
-## Historical source-banner attribution
+## Source attribution
 
-The consolidated source banners associated the autonomous-vehicle-control
-project with the Systems and Control Lab (SCL), HUN-REN SZTAKI, Budapest,
-Hungary. They recorded these contributors and contemporary roles:
+The historical source headers credit Benedek Szanyó and Bence Jekl for contributions to the autonomous vehicle control project at SZTAKI.
 
-- Benedek Szanyó
-  - 2024 role: `BSc student, Computer Science, BME Faculty of Electrical Engineering and Informatics`.
-    One banner spells the degree `B.Sc. student`.
-  - 2025 role: `MSc student, Computer Science, BME Faculty of Electrical Engineering and Informatics`
-- Jekl Bence
-  - Recorded role: `MSc student, Vehicle Engineering, BME Faculty of Transportation Engineering and Vehicle Engineering`
+## Copyright
 
-These entries preserve historical attribution only. They neither establish
-additional copyright ownership nor replace reviewed legal notices.
-
-## Recorded module-banner dates
-
-The consolidated banner dates span 2024-06-25 through 2025-02-17:
-
-- 2024-06-25 — `CTPY/reinforcengine/utils/tools/profiler.py`
-- 2024-06-27 —
-  `CTPY/reinforcengine/utils/scenarios/manager/scenario_manager.py`
-- 2024-07-03 — `CTPY/reinforcengine/utils/core/ego.py`
-- 2024-07-26 —
-  `CTPY/rl_model_storage/models/eve_project/resources/utils/helper_functions.py`,
-  `CTPY/rl_model_storage/models/eve_project/resources/utils/switch_dict.py`,
-  `CTPY/rl_model_storage/models/jasmine_project/resources/utils/helper_functions.py`,
-  `CTPY/rl_model_storage/models/jasmine_project/resources/utils/switch_dict.py`,
-  `CTPY/rl_model_storage/models/susan_project/resources/utils/helper_functions.py`,
-  and
-  `CTPY/rl_model_storage/models/susan_project/resources/utils/switch_dict.py`
-- 2024-08-16 —
-  `CTPY/rl_model_storage/models/eve_project/resources/utils/bence_preprocessor.py`
-  and
-  `CTPY/rl_model_storage/models/jasmine_project/resources/utils/bence_preprocessor.py`
-- 2024-08-29 —
-  `CTPY/reinforcengine/utils/core/functions/generator.py`,
-  `CTPY/reinforcengine/utils/core/functions/longmodel.py`,
-  `CTPY/reinforcengine/utils/core/functions/saturation.py`,
-  `CTPY/reinforcengine/utils/tools/scheduler.py`,
-  `CTPY/reinforcengine/utils/tools/steppable.py`,
-  `CTPY/reinforcengine/utils/trip_and_route_generator.py`,
-  `CTPY/reinforcengine/utils/xml_manipulators/pedestrian_route_xml_manipulator.py`,
-  and `CTPY/reinforcengine/utils/xml_manipulators/xml_manipulator.py`
-- 2025-02-17 — `CTPY/reinforcengine/running_mode.py`,
-  `CTPY/rl_model_storage/models/eve_project/resources/ray/sim_env.py`, and
-  `CTPY/rl_model_storage/models/jasmine_project/resources/ray/sim_env.py`
+The project copyright notices name Benedek Szanyó and HUN-REN SZTAKI. All rights reserved. See the [repository rights notice](README.md#rights).
