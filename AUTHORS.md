@@ -1,7 +1,6 @@
 <!--
 Copyright (c) 2026 Benedek Szanyó.
 Copyright (c) 2026 HUN-REN SZTAKI.
-All rights reserved.
 -->
 
 # Authors and contributors
@@ -22,4 +21,5 @@ The historical source headers credit Benedek Szanyó and Bence Jekl for contribu
 
 ## Copyright
 
-The project copyright notices name Benedek Szanyó and HUN-REN SZTAKI. All rights reserved. See the [repository rights notice](README.md#rights).
+The project copyright notices name Benedek Szanyó and HUN-REN SZTAKI. The
+project source code is available under the [MIT License](LICENSE).

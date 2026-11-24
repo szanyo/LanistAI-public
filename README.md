@@ -37,5 +37,7 @@ python -m unittest \
 
 ## Rights
 
-The source retains its existing copyright notices. The repository does not
-grant an open source license. See `AUTHORS.md`.
+The project source code is available under the [MIT License](LICENSE).
+The license grants apply even where legacy source headers say “All rights
+reserved”. Third-party components retain their own terms. See
+[Authors and contributors](AUTHORS.md) for attribution.
