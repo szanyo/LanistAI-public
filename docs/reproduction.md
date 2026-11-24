@@ -22,9 +22,9 @@ The paper records the checkpoint digests below.
 
 These sessions predate the selected source snapshot, whose
 model manifest declares version `v1.3.232`. The paper provenance does not identify the exact source
-checkout. This repository contains source and scenario inputs. The original
-trained weights and original generated training routes are separate artifacts.
-A fresh run uses newly generated traffic and learns a new policy.
+checkout. The two original checkpoints and their session metadata are
+included under the model's `training_sessions/` directory. A fresh training
+run generates new traffic and learns a new policy.
 
 ## Train the model
 
@@ -54,6 +54,15 @@ Sessions and checkpoints are stored in the writable model
 workspace. Stop the run using the application control panel.
 
 ## Evaluate the held-out cases
+
+The installation runbook copies both paper checkpoints into the writable
+model workspace. For an existing workspace, copy the two session directories
+from the snapshot's `training_sessions/` into the model's local
+`training_sessions/`. If a matching directory already exists, use a fresh
+workspace to keep its files intact.
+
+Use the [evaluation runbook](runbooks/evaluation-library.md) for the headless
+100-case sweep or for a single scenario with the SUMO graphical window.
 
 Follow the [held-out evaluation runbook](runbooks/evaluation-library.md) to
 select a compatible checkpoint, run the four groups of 25 cases and locate

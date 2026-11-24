@@ -1,0 +1,17 @@
+schema_version: 1
+checkpoint:
+  name: scenario_20_checkpoint_2936010_steps.zip
+  kind: checkpoint
+  framework_uuid: sb3
+  scenario_index: 20
+  curriculum_state:
+    cumulative_min_terminated_episodes: 150
+    curriculum_index: 6
+    horizon_is_full: true
+    state_name: full
+    target_type: null
+    target_value: null
+  step_count: 2936010
+  parent_checkpoint_name: null
+  saved_at: '2026-09-30T16:05:24Z'
+  annotation: null

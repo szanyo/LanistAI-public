@@ -38,6 +38,33 @@ overlapping and symlink-aliased roots.
 4. Apply the configuration and use Start. Library inference is deterministic
    and runs headless at maximum throughput.
 
+The [checkpoint list](../reproduction.md#source-and-inputs) gives the exact
+session and checkpoint to select for each framework.
+
+## Evaluate a single scenario with the SUMO GUI
+
+Run the application from a terminal in a graphical desktop session with
+access to an X11 or XWayland display. Check that the bundled SUMO GUI is
+available after [configuring SUMO](installation.md#configure-sumo).
+
+```bash
+"$SUMO_HOME/bin/sumo-gui" --version
+```
+
+1. Open Configure with F1. Choose Evaluation and the framework that matches
+   the checkpoint.
+2. Select the included session and checkpoint for that framework.
+3. Select **GUI (real-time)** and choose a scenario index if the selector
+   offers one. A fresh workspace uses scenario 0 on the first run.
+4. Apply the configuration and press Start. On first use the application
+   generates the configured scenarios, then opens the SUMO window.
+   After generation the scenario selector can list the available indices.
+
+GUI evaluation uses one generated scenario from the training curriculum. The
+headless Library profile runs the frozen 100 held-out cases used in the paper.
+
+## Sweep output
+
 The runtime revalidates the active framework, session, checkpoint, checkpoint
 bytes, library manifest, and repetition count before launch. SB3 restores one
 cached `PPO` and calls `predict()`. Ray restores one cached evaluation-mode

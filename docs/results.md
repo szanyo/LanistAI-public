@@ -60,5 +60,6 @@ selection from the archived 3 October 2026 reanalysis of the same two runs
 (`paired-iqm-stops-001`). The source CSV has SHA-256
 `9069e1e4b6bc8954d7a004809801356f9ce94dfc761ad4c6abd79f89672a7aab`.
 Recomputing IQMs and intervals from these rows reproduces the corresponding
-paper CSV values. The two full per-step trace sets, the original TensorBoard
-events and the checkpoint binaries remain separate artifacts.
+paper CSV values. The two full per-step trace sets and the original TensorBoard
+events remain separate artifacts. The [reproduction guide](reproduction.md)
+identifies the included checkpoints and explains how to evaluate them.

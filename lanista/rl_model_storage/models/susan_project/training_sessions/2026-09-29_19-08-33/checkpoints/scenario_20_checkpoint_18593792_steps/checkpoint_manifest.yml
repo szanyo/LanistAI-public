@@ -1,0 +1,17 @@
+schema_version: 1
+checkpoint:
+  name: scenario_20_checkpoint_18593792_steps
+  kind: final
+  framework_uuid: ray
+  scenario_index: 20
+  curriculum_state:
+    name: full
+    target_type: null
+    target_value: null
+    curriculum_index: 6
+    cumulative_min_terminated_episodes: 1200
+    horizon_is_full: true
+  step_count: 18593792
+  parent_checkpoint_name: null
+  saved_at: '2026-09-30T00:35:22Z'
+  annotation: null

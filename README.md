@@ -9,7 +9,7 @@ scenario library. The application supports Stable-Baselines3 and Ray RLlib.
 
 - `lanista/` contains the application and its resources
 - `lanista/rl_model_storage/models/susan_project/` contains the experiment's model,
-  training configuration and 100-scenario evaluation library
+  training configuration, both paper checkpoints and the 100-scenario evaluation library
 - [Paper results and data](docs/results.md) maps figures and tables to their source files
 - `requirements.txt` pins the Python environment used on Linux x86-64
 - `PUBLICATION-SOURCE.json` records the historical Git references

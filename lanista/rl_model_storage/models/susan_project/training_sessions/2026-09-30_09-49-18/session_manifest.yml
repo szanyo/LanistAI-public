@@ -1,0 +1,21 @@
+schema_version: 1
+session:
+  name: 2026-09-30_09-49-18
+  uuid: 19d2a436-f1de-4fbb-ac67-b2023f9d7b7b
+  storage_name: 2026-09-30_09-49-18
+  description: ''
+  tags: []
+  created_at: '2026-09-30T09:49:21Z'
+  modified_at: '2026-09-30T16:05:25Z'
+  parent_session_uuid: null
+  child_session_uuids: []
+  framework_uuid: sb3
+  load_checkpoint_from_session: null
+  load_checkpoint_name: null
+  base_step_offset: 0
+  last_checkpoint_name: scenario_20_checkpoint_2936010_steps.zip
+  last_checkpoint_kind: checkpoint
+  last_checkpoint_saved_at: '2026-09-30T16:05:25Z'
+session_version: 232
+model_semantic_version: v1.3.231
+status: completed
